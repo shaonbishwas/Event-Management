@@ -1,7 +1,7 @@
 import { Tilt } from "react-tilt";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import './Event.css'
+import "./Event.css";
 
 const defaultOptions = {
   reverse: false, // reverse the tilt direction
@@ -18,7 +18,10 @@ const defaultOptions = {
 const Event = ({ event }) => {
   const { id, name, banner, description } = event;
   return (
-    <Tilt options={defaultOptions} className="textBody bg-transparent card w-80 bg-base-100 shadow-xl mx-auto my-10">
+    <Tilt
+      options={defaultOptions}
+      className="textBody bg-transparent card w-80 bg-base-100 shadow-xl mx-auto my-10"
+    >
       <figure className=" h-44">
         <img src={banner} alt="Shoes" className="h-full w-full" />
       </figure>
@@ -26,7 +29,10 @@ const Event = ({ event }) => {
         <h2 className="card-title">{name}</h2>
         <p>{description.slice(0, 100)}....</p>
         <div className="card-actions justify-end w-full">
-          <Link to={`/eventDetails/${id}`} className=" text-center py-2 rounded-full text-white cardBtn w-[50%] hover:bg-black ">
+          <Link
+            to={`/eventDetails/${id}`}
+            className=" text-center py-2 rounded-full text-white cardBtn w-[50%] hover:bg-black "
+          >
             Details
           </Link>
         </div>

@@ -1,5 +1,6 @@
 # Tech and Gaming Events management
 
+-live site link : [https://event-management-a6e4f.web.app]
 
 # Some Features of the website
 - If you login then your email, name and profile will show in left side of navigation bar.
