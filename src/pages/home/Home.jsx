@@ -5,6 +5,7 @@ import "./home.css";
 import Footer from "../../components/Footer/Footer";
 import OwnEvent from "../../components/OwnEvent/OwnEvent";
 import { ToastContainer } from "react-toastify";
+import SimpleMap from "../../components/GoogleMap/GoogleMap";
 
 const Home = () => {
   const events = useLoaderData();
@@ -18,6 +19,10 @@ const Home = () => {
         ))}
       </div>
       <OwnEvent></OwnEvent>
+      <div className="text-center my-5 text-4xl font-bold">
+        <h1>Our Location</h1>
+      </div>
+      <SimpleMap></SimpleMap>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
     </div>
