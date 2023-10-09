@@ -1,18 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../authProvider/AuthProvider";
 
+
+
 const Login = () => {
-  const { logIn, logInWithGoogle, setLoading} =
-    useContext(AuthContext);
+  const { logIn, logInWithGoogle, setLoading, notify } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
     logIn(email, password)
-      .then()
+      .then(() => {
+        notify("Successfully Loged In with email and password")
+        navigate(location?.state ? location.state : "/");
+      })
       .catch((error) => {
         console.error(error.message);
         setLoading(false);
@@ -20,7 +26,10 @@ const Login = () => {
   };
   const handleGoogleLogin = () => {
     logInWithGoogle()
-      .then()
+      .then(() => {
+        notify("Successfully Loged In with Google")
+        navigate(location?.state ? location.state : "/");
+      })
       .catch((error) => {
         console.error(error.message);
       });

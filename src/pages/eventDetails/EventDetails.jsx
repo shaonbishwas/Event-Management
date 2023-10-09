@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import { FaLocationDot } from "react-icons/fa6";
 import { BiTime } from "react-icons/bi";
+import { ToastContainer } from "react-toastify";
 
 const EventDetails = () => {
   const datas = useLoaderData();
@@ -33,13 +34,13 @@ const EventDetails = () => {
           <p className="flex items-center gap-1 mb-1"><BiTime></BiTime>{organizing_time}</p>
           <p className="my-3">
             <span className="bg-blue-400 py-2 px-4 mr-1 rounded-s-lg ">
-              Entry Fee
+              Event Fee
             </span>
             <span className="bg-gray-400 p-2 rounded-e-lg">{event_price}</span>
           </p>
           <p className="my-3">
             <span className="bg-blue-400 p-2 mr-1 rounded-s-lg ">
-              Participants
+              Acpected Participants
             </span>
             <span className="bg-gray-400 p-2 rounded-e-lg">
               {participants_amount}
@@ -48,6 +49,7 @@ const EventDetails = () => {
         </div>
       </div>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

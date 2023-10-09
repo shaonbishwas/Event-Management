@@ -4,6 +4,7 @@ import Event from "../../components/Event/Event";
 import "./home.css";
 import Footer from "../../components/Footer/Footer";
 import OwnEvent from "../../components/OwnEvent/OwnEvent";
+import { ToastContainer } from "react-toastify";
 
 const Home = () => {
   const events = useLoaderData();
@@ -18,6 +19,7 @@ const Home = () => {
       </div>
       <OwnEvent></OwnEvent>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

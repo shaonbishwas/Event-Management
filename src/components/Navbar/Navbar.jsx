@@ -14,11 +14,17 @@ const Navbar = () => {
   };
   const links = (
     <>
-      <NavLink className="lg:mt-2" to="/">
+      <NavLink  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active lg:mt-2 underline text-red-700" : "lg:mt-2 "
+  } to="/">
         Home
       </NavLink>
-      <NavLink className="lg:ml-5 mt-2">About</NavLink>
-      <NavLink className="lg:ml-5 mt-2">Contect</NavLink>
+      <NavLink className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active lg:ml-5 mt-2" : "lg:ml-5 mt-2"
+  }>About</NavLink>
+      <NavLink className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active lg:ml-5 mt-2 " : "lg:ml-5 mt-2 underline"
+  }>Contect</NavLink>
     </>
   );
 

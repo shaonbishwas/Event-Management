@@ -2,18 +2,24 @@ import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../authProvider/AuthProvider";
+import { ToastContainer } from "react-toastify";
 
 const Register = () => {
-  const {createUser} = useContext(AuthContext);
+  const {createUser, notify, setError, error, setLoading} = useContext(AuthContext);
   const handleSubmit = e =>{
     e.preventDefault()
     const form = new FormData(e.currentTarget)
     const password = form.get('password')
     const email = form.get('email')
+    setError('')
     createUser(email, password)
-    .then()
+    .then(()=>{
+      notify("Successfully Account Created")
+    })
     .catch(error => {
         console.error(error)
+        setLoading(false)
+        setError(error.message)
     })
   }
   return (
@@ -68,9 +74,13 @@ const Register = () => {
                   Login Now
                 </Link>
               </p>
+              {
+                error && <p className="text-red-600">{error}</p>
+              }
             </form>
           </div>
         </div>
+        <ToastContainer></ToastContainer>
       </div>
     </>
   );
