@@ -6,7 +6,7 @@ import { AuthContext } from "../../authProvider/AuthProvider";
 
 
 const Login = () => {
-  const { logIn, logInWithGoogle, setLoading, notify } = useContext(AuthContext);
+  const { logIn, logInWithGoogle, setLoading, notify, lerror, setLerror } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   const handleLogin = (e) => {
@@ -14,24 +14,28 @@ const Login = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
+    setLerror('')
     logIn(email, password)
       .then(() => {
         notify("Successfully Loged In with email and password")
         navigate(location?.state ? location.state : "/");
       })
-      .catch((error) => {
-        console.error(error.message);
+      .catch((lerror) => {
+        setLerror(lerror.message)
         setLoading(false);
       });
   };
   const handleGoogleLogin = () => {
+    setLerror('')
     logInWithGoogle()
       .then(() => {
         notify("Successfully Loged In with Google")
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
-        console.error(error.message);
+        setLerror(error.message)
+        navigate(location?.state ? location.state : "/");
+        setLoading(false);
       });
   };
   return (
@@ -80,6 +84,9 @@ const Login = () => {
                   Register Now
                 </Link>
               </p>
+              {
+                lerror && <p className="text-red-600">{lerror}</p>
+              }
             </form>
           </div>
         </div>

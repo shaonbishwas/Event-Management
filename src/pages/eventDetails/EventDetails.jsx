@@ -21,7 +21,7 @@ const EventDetails = () => {
     <div className="min-h-screen">
       <Navbar></Navbar>
       <div
-        className="w-4/5 mx-auto flex gap-5"
+        className="w-4/5 mx-auto flex gap-5 mt-10"
         style={{ backdropFilter: `blur(20px)`, height: `calc(100vh - 200px)` }}
       >
         <div className="w-[50%] flex items-center">

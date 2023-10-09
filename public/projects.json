@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Elden Ring",
+    "description": "Elden Ring is an action role-playing game developed by FromSoftware and published by Bandai Namco Entertainment. It features an open-world environment and is known for its challenging gameplay and intricate lore.",
+    "banner": "https://i.ibb.co/chH38mw/elden-ring-pc-game-steam-europe-cover.jpg"
+  },
+  {
+    "name": "Horizon Forbidden West",
+    "description": "Horizon Forbidden West is an action-adventure game developed by Guerrilla Games. It is a sequel to Horizon Zero Dawn and takes players to a stunning post-apocalyptic world filled with robotic creatures and mysteries.",
+    "banner": "https://i.ibb.co/bPR2Hmb/maxresdefault.jpg"
+  },
+  {
+    "name": "Valorant",
+    "description": "Valorant is a tactical first-person shooter developed and published by Riot Games. It combines precise gunplay with unique character abilities, making it a popular choice in the competitive gaming scene.",
+    "banner": "https://i.ibb.co/VtKdb9h/image-2.webp"
+  },
+  {
+    "name": "Among Us",
+    "description": "Among Us is a multiplayer party game developed by InnerSloth. Players work together on a spaceship but must identify and vote off impostors among them. It became a viral hit for its social deduction gameplay.",
+    "banner": "https://i.ibb.co/PFMf353/maxresdefault-1.jpg"
+  },
+  {
+    "name": "Resident Evil Village",
+    "description": "Resident Evil Village is a survival horror game developed and published by Capcom. It is the eighth main installment in the Resident Evil series and features a captivating storyline and terrifying creatures.",
+    "banner": "https://i.ibb.co/7YyX8s2/maxresdefault-2.jpg"
+  },
+  {
+    "name": "Ratchet & Clank: Rift Apart",
+    "description": "Ratchet & Clank: Rift Apart is a platformer/shooter game developed by Insomniac Games. It showcases the power of the PlayStation 5 with stunning graphics and fast-paced action across dimensions.",
+    "banner": "https://i.ibb.co/RSDRPjM/EGS-Ratchet-Clank-Rift-Apart-Insomniac-Games-S1-2560x1440-aea43afcad407b14673456322e63a01b.jpg"
+  },
+  {
+    "name": "Cyberpunk 2077",
+    "description": "Cyberpunk 2077 is an open-world action role-playing game developed by CD Projekt. It immerses players in a dystopian future, offering a rich narrative and vast open-world exploration.",
+    "banner": "https://i.ibb.co/f9X64QN/cyberpunk.webp"
+  },
+  {
+    "name": "Deathloop",
+    "description": "Deathloop is an immersive first-person shooter developed by Arkane Studios and published by Bethesda Softworks. It combines time-loop gameplay with stylish combat and a unique narrative.",
+    "banner": "https://i.ibb.co/sJWJWvC/maxresdefault-3.jpg"
+  }
+]

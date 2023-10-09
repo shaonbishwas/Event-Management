@@ -17,7 +17,8 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [lerror, setLerror] = useState(null);
+  const [rerror, setRerror] = useState(null);
 
   const notify = (message) => toast(message);
   const logIn = (email, password) => {
@@ -54,8 +55,10 @@ const AuthProvider = ({ children }) => {
     logIn,
     logOut,
     createUser,
-    error,
-    setError,
+    lerror,
+    setLerror,
+    rerror,
+    setRerror,
     logInWithGoogle,
   };
   return (

@@ -1,0 +1,9 @@
+img{
+    transition: transform 2s;
+}
+#main{
+    overflow: hidden;
+}
+#main:hover img{
+    transform: scale(1.9);
+}

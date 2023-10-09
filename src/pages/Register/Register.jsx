@@ -5,23 +5,23 @@ import { AuthContext } from "../../authProvider/AuthProvider";
 import { ToastContainer } from "react-toastify";
 
 const Register = () => {
-  const {createUser, notify, setError, error, setLoading} = useContext(AuthContext);
-  const handleSubmit = e =>{
-    e.preventDefault()
-    const form = new FormData(e.currentTarget)
-    const password = form.get('password')
-    const email = form.get('email')
-    setError('')
+  const { createUser, notify, setRerror, rerror, setLoading } =
+    useContext(AuthContext);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const password = form.get("password");
+    const email = form.get("email");
+    setRerror("");
     createUser(email, password)
-    .then(()=>{
-      notify("Successfully Account Created")
-    })
-    .catch(error => {
-        console.error(error)
-        setLoading(false)
-        setError(error.message)
-    })
-  }
+      .then(() => {
+        notify("Successfully Account Created");
+      })
+      .catch((error) => {
+        setLoading(false);
+        setRerror(error.message);
+      });
+  };
   return (
     <>
       <Navbar></Navbar>
@@ -74,9 +74,7 @@ const Register = () => {
                   Login Now
                 </Link>
               </p>
-              {
-                error && <p className="text-red-600">{error}</p>
-              }
+              {rerror && <p className="text-red-600">{rerror}</p>}
             </form>
           </div>
         </div>

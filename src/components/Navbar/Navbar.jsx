@@ -20,16 +20,16 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "active lg:ml-5 mt-2" : "lg:ml-5 mt-2"
-  }>About</NavLink>
+    isPending ? "pending" : isActive ? "active lg:ml-5 mt-2 underline text-red-700" : "lg:ml-5 mt-2"
+  } to='/projects'>Projects</NavLink>
       <NavLink className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "active lg:ml-5 mt-2 " : "lg:ml-5 mt-2 underline"
-  }>Contect</NavLink>
+    isPending ? "pending" : isActive ? "active lg:ml-5 mt-2 underline text-red-700" : "lg:ml-5 mt-2 "
+  } to='/contact'>Contact Us</NavLink>
     </>
   );
 
   return (
-    <div className="navbar bg-white">
+    <div className="navbar bg-white top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -58,10 +58,12 @@ const Navbar = () => {
         {user ? (
           <div className="flex gap-2 h-12 items-center">
             <div className="h-full">
-              <img className="h-full rounded-full" src={user.photoURL} alt="" />
+              {
+                user.photoURL ? <img className="h-full rounded-full" src={user.photoURL} alt="" /> : <FaCircleUser className="h-full rounded-full text-4xl"></FaCircleUser>
+              }
             </div>
             <div className="text-sm">
-              <p>{user.displayName}</p>
+              <p>{user.displayName || 'User Name'}</p>
               <p>{user.email}</p>
             </div>
           </div>

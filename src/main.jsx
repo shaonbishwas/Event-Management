@@ -9,27 +9,46 @@ import Register from './pages/Register/Register'
 import MainRoute from './MainRoute'
 import PrivateRoute from './PrivateRoute/PrivateRoute'
 import EventDetails from './pages/eventDetails/EventDetails'
+import Contact from './pages/Contact/Contact'
+import Projects from './pages/Projects/Projects'
+import ErrorElement from './components/Errorelement/ErrorElement'
 
 const router = createBrowserRouter([
   {
     path:'/',
     element: <MainRoute></MainRoute>,
+    errorElement: <ErrorElement></ErrorElement>,
     children:[
       {
         path: '/',
         element: <Home></Home>,
+        errorElement: <ErrorElement></ErrorElement>,
         loader: ()=> fetch('../public/events.json')
       },
       {
         path: '/login',
+        errorElement: <ErrorElement></ErrorElement>,
         element:<Login></Login>
       },
       {
         path: '/register',
+        errorElement: <ErrorElement></ErrorElement>,
         element:<Register></Register>
       },
       {
+        path: '/projects',
+        errorElement: <ErrorElement></ErrorElement>,
+        element: <PrivateRoute><Projects></Projects></PrivateRoute>,
+        loader: ()=> fetch('../public/projects.json')
+      },
+      {
+        path: '/contact',
+        errorElement: <ErrorElement></ErrorElement>,
+        element: <PrivateRoute><Contact></Contact></PrivateRoute>
+      },
+      {
         path: '/eventdetails/:id',
+        errorElement: <ErrorElement></ErrorElement>,
         element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
         loader: ()=> fetch('../public/events.json')
       }

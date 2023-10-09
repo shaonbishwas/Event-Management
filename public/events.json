@@ -7,7 +7,7 @@
     "description": "The Electronic Entertainment Expo (E3) is the premier event for the video game industry. It showcases the latest gaming hardware, software, and upcoming releases.",
     "location": "Los Angeles, California",
     "organizing_time": "June 6-9, 2023",
-    "participants_amount": "Thousands of gamers, developers, and industry professionals"
+    "participants_amount": "Thousands of gamers and developers"
   },
   {
     "id": "2",
@@ -67,7 +67,7 @@
     "description": "Gamescom is Europe's largest gaming event, featuring game announcements, hands-on demos, and esports tournaments.",
     "location": "Cologne, Germany",
     "organizing_time": "August 23-27, 2023",
-    "participants_amount": "Hundreds of thousands of gamers and industry professionals"
+    "participants_amount": "Thousands of gamers and industry professionals"
   },
   {
     "id": "8",
@@ -77,6 +77,6 @@
     "description": "TechCrunch Disrupt is a tech startup conference that includes startup pitches, expert panels, and discussions on the latest tech trends.",
     "location": "San Francisco, California",
     "organizing_time": "September 18-20, 2023",
-    "participants_amount": "Thousands of entrepreneurs, investors, and tech enthusiasts"
+    "participants_amount": "Thousands of entrepreneurs and investors"
   }
 ]
