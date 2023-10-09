@@ -13,6 +13,18 @@ const Register = () => {
     const password = form.get("password");
     const email = form.get("email");
     setRerror("");
+    if(password.length < 6){
+      setRerror("Password should be 6 character or above")
+      return
+    }
+    if(!/[A-Z]/.test(password)){
+      setRerror("Password should have one capital latter")
+      return
+    }
+    if(!/[!@#$%^&*()_+{}/:;<>,.?~\\]/.test(password)){
+      setRerror("Password should have one spacial character")
+      return
+    }
     createUser(email, password)
       .then(() => {
         notify("Successfully Account Created");

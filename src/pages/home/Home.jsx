@@ -11,6 +11,7 @@ const Home = () => {
   const events = useLoaderData();
   return (
     <div className="">
+      <ToastContainer></ToastContainer>
       <Navbar></Navbar>
       <div id="banner" className="h-[500px]"></div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2  w-4/5 mx-auto  lg:my-10">
@@ -24,7 +25,6 @@ const Home = () => {
       </div>
       <SimpleMap></SimpleMap>
       <Footer></Footer>
-      <ToastContainer></ToastContainer>
     </div>
   );
 };

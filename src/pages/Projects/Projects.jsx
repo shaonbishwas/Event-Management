@@ -3,10 +3,12 @@ import { useLoaderData } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import Project from './Project';
+import { ToastContainer } from "react-toastify";
 const Projects = () => {
     const data = useLoaderData()
     return (
         <div className="h-full">
+            <ToastContainer></ToastContainer>
             <Navbar></Navbar>
             <div className="text-center">
             <h1 className="text-8xl font-bold">PROJECTS</h1>
@@ -17,6 +19,7 @@ const Projects = () => {
                     data.map((d, idx)=><Project key={idx} projectData={d} ></Project>)
                 }
             </div>
+
             <Footer></Footer>
         </div>
     );
