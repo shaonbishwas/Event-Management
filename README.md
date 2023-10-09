@@ -1,8 +1,10 @@
-# React + Vite
+# Tech and Gaming Events management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Some Features of the website
+- If you login then your email, name and profile will show in left side of navigation bar.
+- Without login you will not able to access projects and contact page and also you will to see the details of our service
+- After login you wil redirect to the same page where you tried to go 
+- you can log in with google also
+- After successfully login or register you will informed by a beautiful toast
+- you can see the details of Events by clicking the details button

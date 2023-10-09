@@ -1,7 +1,10 @@
 import { useRouteError } from "react-router-dom";
-
+import PropTypes from 'prop-types'
 const ErrorElement = () => {
   const error = useRouteError();
+  // if(error){
+  //   return <Navigate to={link}></Navigate>
+  // }
   return (
     <div className="min-h-screen flex justify-center items-center">
       <div className="">
@@ -15,5 +18,7 @@ const ErrorElement = () => {
     </div>
   );
 };
-
+ErrorElement.propTypes ={
+  link: PropTypes.string
+}
 export default ErrorElement;

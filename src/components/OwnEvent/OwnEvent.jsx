@@ -6,7 +6,7 @@ const OwnEvent = () => {
         Bring people together, or turn your passion into a business. We gives
         you everything you need to host your best event yet.
       </p>
-      <button className="btn btn-secondary mt-3">SUBMIT EVENT</button>
+      <button className="py-2 px-4 rounded-full text-white font-semibold mt-3 button">SUBMIT EVENT</button>
     </div>
   );
 };

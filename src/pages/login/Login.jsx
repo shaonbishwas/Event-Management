@@ -2,6 +2,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../authProvider/AuthProvider";
+import Footer from "../../components/Footer/Footer";
+import './login.css'
 
 
 
@@ -41,9 +43,9 @@ const Login = () => {
   return (
     <>
       <Navbar></Navbar>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse w-[30%] ">
-          <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 h-full">
+      <div className=" hero min-h-screen bg-base-200">
+        <div className="hero-content flex-col lg:flex-row-reverse lg:w-[30%] ">
+          <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 h-full loginCart">
             <form className="card-body" onSubmit={handleLogin}>
               <div className="form-control">
                 <label className="label">
@@ -53,7 +55,7 @@ const Login = () => {
                   type="email"
                   placeholder="email"
                   name="email"
-                  className="input input-bordered"
+                  className="loginCart input input-bordered"
                   required
                 />
               </div>
@@ -65,12 +67,12 @@ const Login = () => {
                   type="password"
                   placeholder="password"
                   name="password"
-                  className="input input-bordered"
+                  className="loginCart input input-bordered"
                   required
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className=" button py-3 rounded-lg text-white">Login</button>
               </div>
               <button
                 className="btn border border-blue-600 mt-5 mb-1 text-blue-600"
@@ -91,6 +93,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 };

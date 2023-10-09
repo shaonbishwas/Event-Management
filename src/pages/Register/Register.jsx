@@ -3,6 +3,8 @@ import Navbar from "../../components/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../authProvider/AuthProvider";
 import { ToastContainer } from "react-toastify";
+import Footer from "../../components/Footer/Footer";
+import './register.css'
 
 const Register = () => {
   const { createUser, notify, setRerror, rerror, setLoading } =
@@ -13,17 +15,17 @@ const Register = () => {
     const password = form.get("password");
     const email = form.get("email");
     setRerror("");
-    if(password.length < 6){
-      setRerror("Password should be 6 character or above")
-      return
+    if (password.length < 6) {
+      setRerror("Password should be 6 character or above");
+      return;
     }
-    if(!/[A-Z]/.test(password)){
-      setRerror("Password should have one capital latter")
-      return
+    if (!/[A-Z]/.test(password)) {
+      setRerror("Password should have one capital latter");
+      return;
     }
-    if(!/[!@#$%^&*()_+{}/:;<>,.?~\\]/.test(password)){
-      setRerror("Password should have one spacial character")
-      return
+    if (!/[!@#$%^&*()_+{}/:;<>,.?~\\]/.test(password)) {
+      setRerror("Password should have one spacial character");
+      return;
     }
     createUser(email, password)
       .then(() => {
@@ -37,9 +39,10 @@ const Register = () => {
   return (
     <>
       <Navbar></Navbar>
+      <ToastContainer></ToastContainer>
       <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse w-[30%] ">
-          <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 h-full">
+        <div className="hero-content flex-col lg:flex-row-reverse lg:w-[30%] ">
+          <div className="registerCart card flex-shrink-0 w-full shadow-2xl bg-base-100 h-full">
             <form className="card-body" onSubmit={handleSubmit}>
               <div className="form-control">
                 <label className="label">
@@ -49,19 +52,19 @@ const Register = () => {
                   type="text"
                   placeholder="Name"
                   name="name"
-                  className="input input-bordered"
+                  className="registerCart input input-bordered"
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className=" label-text">Email</span>
                 </label>
                 <input
                   type="email"
                   placeholder="email"
                   name="email"
-                  className="input input-bordered"
+                  className="registerCart input input-bordered"
                   required
                 />
               </div>
@@ -73,12 +76,14 @@ const Register = () => {
                   type="password"
                   placeholder="password"
                   name="password"
-                  className="input input-bordered"
+                  className="registerCart input input-bordered"
                   required
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+                <button className="button py-3 rounded-lg text-white">
+                  Register
+                </button>
               </div>
               <p className="mt-1">
                 Already have account ?{" "}
@@ -90,8 +95,8 @@ const Register = () => {
             </form>
           </div>
         </div>
-        <ToastContainer></ToastContainer>
       </div>
+      <Footer></Footer>
     </>
   );
 };

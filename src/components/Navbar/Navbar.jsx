@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../authProvider/AuthProvider";
 import { FaCircleUser } from "react-icons/fa6";
+import "./Navbar.css";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -14,22 +15,47 @@ const Navbar = () => {
   };
   const links = (
     <>
-      <NavLink  className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "active lg:mt-2 underline text-red-700" : "lg:mt-2 "
-  } to="/">
+      <NavLink
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? "active lg:mt-2 underline text-pink-700 font-bold text-lg"
+            : "lg:mt-2 text-lg"
+        }
+        to="/"
+      >
         Home
       </NavLink>
-      <NavLink className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "active lg:ml-5 mt-2 underline text-red-700" : "lg:ml-5 mt-2"
-  } to='/projects'>Projects</NavLink>
-      <NavLink className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "active lg:ml-5 mt-2 underline text-red-700" : "lg:ml-5 mt-2 "
-  } to='/contact'>Contact Us</NavLink>
+      <NavLink
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? "active lg:ml-5 text-lg mt-2 underline font-bold text-pink-700"
+            : "lg:ml-5 mt-2 text-lg"
+        }
+        to="/projects"
+      >
+        Projects
+      </NavLink>
+      <NavLink
+        className={({ isActive, isPending }) =>
+          isPending
+            ? "pending"
+            : isActive
+            ? "active lg:ml-5 mt-2 text-lg underline font-bold text-pink-700"
+            : "lg:ml-5 mt-2 text-lg"
+        }
+        to="/contact"
+      >
+        Contact Us
+      </NavLink>
     </>
   );
 
   return (
-    <div className="navbar bg-white top-0 z-50">
+    <div className="navbar bg-black top-0 z-50 text-white fixed">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -58,12 +84,18 @@ const Navbar = () => {
         {user ? (
           <div className="flex gap-2 h-12 items-center">
             <div className="h-full">
-              {
-                user.photoURL ? <img className="h-full rounded-full" src={user.photoURL} alt="" /> : <FaCircleUser className="h-full rounded-full text-4xl"></FaCircleUser>
-              }
+              {user.photoURL ? (
+                <img
+                  className="h-full rounded-full"
+                  src={user.photoURL}
+                  alt=""
+                />
+              ) : (
+                <FaCircleUser className="h-full rounded-full text-4xl"></FaCircleUser>
+              )}
             </div>
             <div className="text-sm">
-              <p>{user.displayName || 'User Name'}</p>
+              <p>{user.displayName || "User Name"}</p>
               <p>{user.email}</p>
             </div>
           </div>
@@ -83,11 +115,11 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {user ? (
-          <Link className="btn" onClick={handleSignOut}>
+          <Link className="btn text-white" id="signin" onClick={handleSignOut}>
             Sign Out
           </Link>
         ) : (
-          <Link className="btn" to="/login">
+          <Link className="btn text-white" id="signin" to="/login">
             Sign In
           </Link>
         )}
