@@ -43,7 +43,7 @@ const Login = () => {
   return (
     <>
       <Navbar></Navbar>
-      <div className=" hero min-h-screen bg-base-200">
+      <div className=" hero min-h-screen bg-base-200 text-white">
         <div className="hero-content flex-col lg:flex-row-reverse lg:w-[30%] ">
           <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 h-full loginCart">
             <form className="card-body" onSubmit={handleLogin}>

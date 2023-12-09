@@ -10,7 +10,7 @@ import SimpleMap from "../../components/GoogleMap/GoogleMap";
 const Home = () => {
   const events = useLoaderData();
   return (
-    <div className="relative">
+    <div className="relative text-white">
       <ToastContainer></ToastContainer>
       <div className="absolute w-full">
         <Navbar></Navbar>

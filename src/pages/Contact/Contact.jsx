@@ -11,7 +11,7 @@ const Contact = () => {
         <div className="min-h-screen">
             <Navbar></Navbar>
             <ToastContainer></ToastContainer>
-            <div className="flex w-4/5 justify-evenly mx-auto items-center min-h-screen lg:flex-row flex-col lg:pt-0 pt-20">
+            <div className="flex w-4/5 justify-evenly mx-auto items-center min-h-screen lg:flex-row flex-col lg:pt-0 pt-20 text-white">
                 <div>
                     <h1 id="h1" className=" text-5xl lg:text-6xl font-bold mb-4">GET IN TOUCH</h1>
                     <p className="text-3xl font-bold text-white mb-10">Drop us a message for <br /> your future project</p>

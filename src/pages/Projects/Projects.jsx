@@ -14,7 +14,7 @@ const Projects = () => {
         <h1 id="project" className="text-6xl lg:text-8xl font-bold">
           PROJECTS
         </h1>
-        <p className="text-4xl font-bold">We made possible</p>
+        <p className="text-4xl font-bold text-white">We made possible</p>
       </div>
       <div className=" grid lg:grid-cols-2 w-4/5 mx-auto gap-10 my-10">
         {data.map((d, idx) => (

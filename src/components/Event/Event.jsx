@@ -25,7 +25,7 @@ const Event = ({ event }) => {
       <figure className=" h-44">
         <img src={banner} alt="Shoes" className="h-full w-full" />
       </figure>
-      <div className="card-body ">
+      <div className="card-body text-white">
         <h2 className="card-title">{name}</h2>
         <p>{description.slice(0, 100)}....</p>
         <div className="card-actions justify-end w-full">
